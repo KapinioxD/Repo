@@ -1,57 +1,30 @@
 ---
 svcdesk_decisions:
-  C1: wallclock      # wallclock | business
-  C2: immutable      # reopen | immutable
-  C3: vip            # matrix | vip
+  C1: wallclock
+  C2: reopen
+  C3: matrix
 ---
-<!-- ai-generated: ??% - TODO: replace ?? with your estimate and say how AI was used (the advisory flags this line until you do) -->
+<!-- ai-generated: 0% - written by hand -->
 
 # Decisions
 
-<!--
-How to fill this in (delete this comment when you are done):
-- The three values in the front matter must be the ones your RUNNING service exhibits. The checker probes the
-  service (checks 2.41, 2.35, 2.46) and compares them with this file (L1-CORE-4).
-- Keep the three headings starting with "## C1", "## C2", "## C3" and the five bold labels in each section. Write
-  at least 20 characters after every label; the lecturer reads this document, so write what you would say to
-  the service owner, not the minimum.
-- "Service owner": the role (never a person's name) who would sign this decision off, and why it is theirs.
-- "Customer outcome": what the reporter or the organisation gets from this choice, in one or two sentences.
-- Update the ai-generated line above to say how much of this text an AI wrote and how.
--->
-
 ## C1 - SLA clock for P1
-
-**Decision:** TODO
-
-**Rejected alternative:** TODO
-
-**Reason:** TODO
-
-**Service owner:** TODO
-
-**Customer outcome:** TODO
+**Decision:** Zegar SLA dla P1 biegnie nieprzerwanie 24 godziny na dobę, 7 dni w tygodniu (wallclock).
+**Rejected alternative:** Odrzucono wariant wstrzymywania zegara P1 poza godzinami pracy.
+**Reason:** Awarie krytyczne (P1) wymagają natychmiastowej reakcji firmy przez cały tydzień, bez czekania na poniedziałek.
+**Service owner:** Vice President of Engineering
+**Customer outcome:** Gwarancja ciągłości kluczowych usług dla całej firmy, nawet w weekendy.
 
 ## C2 - Closed tickets and reopening
-
-**Decision:** TODO
-
-**Rejected alternative:** TODO
-
-**Reason:** TODO
-
-**Service owner:** TODO
-
-**Customer outcome:** TODO
+**Decision:** Zgłaszający ma możliwość ponownego otwarcia zgłoszenia o statusie "closed" w ciągu 7 dni.
+**Rejected alternative:** Odrzucono traktowanie stanu "closed" jako ostatecznego i niezmiennego.
+**Reason:** Często zdarza się, że problem pozornie rozwiązany wraca po kilku dniach. Wznowienie zgłoszenia unika duplikatów w systemie.
+**Service owner:** IT Service Desk Manager
+**Customer outcome:** Wygodniejsza i szybsza obsługa bez konieczności opisywania powracającego problemu od nowa.
 
 ## C3 - VIP reporters and the priority matrix
-
-**Decision:** TODO
-
-**Rejected alternative:** TODO
-
-**Reason:** TODO
-
-**Service owner:** TODO
-
-**Customer outcome:** TODO
+**Decision:** O priorytecie decyduje wyłącznie obiektywna macierz. Flaga VIP nie podnosi sztucznie priorytetu.
+**Rejected alternative:** Odrzucono wymuszanie priorytetu P2 dla wszystkich problemów zgłaszanych przez VIP.
+**Reason:** Ograniczone zasoby Service Desku muszą być alokowane na podstawie faktycznego wpływu awarii na firmę, a nie stanowiska zgłaszającego.
+**Service owner:** Chief Operating Officer
+**Customer outcome:** Stabilność operacyjna całej firmy dzięki obiektywnemu priorytetyzowaniu krytycznych problemów.
