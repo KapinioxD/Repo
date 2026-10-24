@@ -1,6 +1,5 @@
 fastapi
 uvicorn[standard]
-sqlalchemy
 pydantic
-pydantic-settings
-pytest
+prometheus-client
+httpx

@@ -1,0 +1,40 @@
+{
+  "title": "SVCDESK SLO Dashboard",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "p99 Latency (/kb/search)",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.99, sum by (le) (rate(http_server_request_duration_seconds_bucket{http_route=\"/kb/search\"}[5m])))",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8}
+    },
+    {
+      "type": "timeseries",
+      "title": "Request Rate (/kb/search)",
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_request_duration_seconds_count{http_route=\"/kb/search\"}[5m]))",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8}
+    },
+    {
+      "type": "timeseries",
+      "title": "Error Rate (/kb/search)",
+      "targets": [
+        {
+          "expr": "sum(rate(http_server_request_duration_seconds_count{http_route=\"/kb/search\", http_response_status_code=~\"5..\"}[5m]))",
+          "refId": "A"
+        }
+      ],
+      "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8}
+    }
+  ],
+  "schemaVersion": 38,
+  "timezone": "browser"
+}
